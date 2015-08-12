@@ -1,4 +1,4 @@
-var Note = require('./models/Note');
+var Note = require('./../models/Note');
 var _ = require('lodash');
 
 exports.list = function(req, res) {
@@ -45,7 +45,7 @@ exports.update = function(req, res) {
 	})
 };
 
-exports.delete = function(req, res) {
+exports.destroy = function(req, res) {
 	req.note.remove(function(err, note) {
 		if (err) { res.send(err); }
 		res.json({ message: "good job m8!" });
